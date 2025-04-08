@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Mineral Article Template</title>
+    <!-- Critical CSS -->
+    <style>
+      /* Inline critical CSS here */
+      /* This will be replaced with the minified critical.css content during build */
+    </style>
+    <!-- Preload critical assets -->
+    <link
+      rel="preload"
+      href="/fonts/fa-solid-900.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" href="/images/placeholder.webp" as="image" />
+    <!-- Deferred non-critical CSS -->
+    <link
+      rel="preload"
+      href="/css/non-critical.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="/css/non-critical.css" /></noscript>
+    <meta name="theme-color" content="#007bff" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+  </head>
+  <body>
+    <!-- Article Template -->
+    <article class="article-container">
+      <header class="article-header">
+        <h1 class="article-title">Understanding Mineral Formation</h1>
+        <div class="article-meta">
+          <span>Published: March 15, 2024</span>
+          <span>Author: Dr. Sarah Johnson</span>
+        </div>
+      </header>
+
+      <div class="article-content">
+        <p>
+          Minerals form through various geological processes, from
+          <span class="glossary-term"
+            >crystallization<span class="tooltip"
+              >The process by which atoms arrange themselves into a crystal
+              structure</span
+            ></span
+          >
+          to
+          <span class="glossary-term"
+            >metamorphism<span class="tooltip"
+              >The transformation of existing rock through heat and
+              pressure</span
+            ></span
+          >.
+        </p>
+
+        <h2>Interactive Mineral Guide</h2>
+        <div class="mineral-guide">
+          <div class="mineral-filters">
+            <div class="filter-group">
+              <label class="filter-label">Mineral Type</label>
+              <select class="filter-select">
+                <option value="">All Types</option>
+                <option value="silicate">Silicates</option>
+                <option value="carbonate">Carbonates</option>
+                <option value="oxide">Oxides</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label class="filter-label">Hardness</label>
+              <select class="filter-select">
+                <option value="">All Hardness</option>
+                <option value="1-2">1-2 (Soft)</option>
+                <option value="3-4">3-4 (Medium)</option>
+                <option value="5-6">5-6 (Hard)</option>
+                <option value="7+">7+ (Very Hard)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mineral-grid" id="mineralGrid">
+            <!-- Mineral cards will be loaded progressively -->
+          </div>
+        </div>
+
+        <h2>Specimen Care Guide</h2>
+        <div class="care-guide">
+          <div class="care-guide-header">
+            <h3 class="care-guide-title">
+              Proper Care for Your Mineral Collection
+            </h3>
+          </div>
+
+          <div class="care-section">
+            <h4 class="care-section-title">Storage</h4>
+            <div class="care-instructions">
+              <div class="care-step">
+                <div class="care-step-number">1</div>
+                <h5 class="care-step-title">Temperature Control</h5>
+                <p class="care-step-description">
+                  Store specimens in a cool, dry place away from direct
+                  sunlight.
+                </p>
+              </div>
+              <div class="care-step">
+                <div class="care-step-number">2</div>
+                <h5 class="care-step-title">Humidity Management</h5>
+                <p class="care-step-description">
+                  Maintain humidity levels between 40-50% to prevent damage.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="care-section">
+            <h4 class="care-section-title">Cleaning</h4>
+            <div class="care-instructions">
+              <div class="care-step">
+                <div class="care-step-number">1</div>
+                <h5 class="care-step-title">Gentle Cleaning</h5>
+                <p class="care-step-description">
+                  Use a soft brush and compressed air for regular maintenance.
+                </p>
+              </div>
+              <div class="care-step">
+                <div class="care-step-number">2</div>
+                <h5 class="care-step-title">Deep Cleaning</h5>
+                <p class="care-step-description">
+                  Consult with a professional for deep cleaning procedures.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="print-controls">
+          <button class="print-button" aria-label="Print Guide">
+            <i class="fas fa-print"></i>
+          </button>
+          <button class="save-button" aria-label="Save as PDF">
+            <i class="fas fa-download"></i>
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Touch Navigation -->
+    <nav class="touch-nav" role="navigation" aria-label="Main navigation">
+      <a href="#" class="touch-nav-item active" aria-current="page">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="#" class="touch-nav-item">
+        <i class="fas fa-search"></i>
+        <span>Search</span>
+      </a>
+      <a href="#" class="touch-nav-item">
+        <i class="fas fa-book"></i>
+        <span>Guide</span>
+      </a>
+      <a href="#" class="touch-nav-item">
+        <i class="fas fa-user"></i>
+        <span>Profile</span>
+      </a>
+    </nav>
+
+    <script>
+      // Progressive image loading
+      class ProgressiveImage {
+        constructor(element) {
+          this.element = element;
+          this.placeholder = element.querySelector(".placeholder");
+          this.image = element.querySelector("img");
+          this.loaded = false;
+
+          this.loadImage();
+        }
+
+        loadImage() {
+          if (this.loaded) return;
+
+          const img = new Image();
+          img.src = this.image.dataset.src;
+
+          img.onload = () => {
+            this.image.src = this.image.dataset.src;
+            this.image.classList.add("loaded");
+            this.placeholder.style.opacity = "0";
+            this.loaded = true;
+          };
+        }
+      }
+
+      // Progressive mineral catalog loading
+      class MineralCatalog {
+        constructor(container, options = {}) {
+          this.container = container;
+          this.options = {
+            pageSize: 6,
+            loadThreshold: 0.8,
+            ...options,
+          };
+
+          this.items = [];
+          this.currentPage = 0;
+          this.loading = false;
+
+          this.init();
+        }
+
+        async init() {
+          // Initial load
+          await this.loadItems();
+
+          // Setup intersection observer for infinite scroll
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting && !this.loading) {
+                  this.loadItems();
+                }
+              });
+            },
+            { threshold: this.options.loadThreshold }
+          );
+
+          observer.observe(this.container.lastElementChild);
+        }
+
+        async loadItems() {
+          this.loading = true;
+
+          // Simulate API call
+          const newItems = await this.fetchItems();
+
+          newItems.forEach((item) => {
+            const card = this.createMineralCard(item);
+            this.container.appendChild(card);
+            new ProgressiveImage(card.querySelector(".progressive-image"));
+          });
+
+          this.loading = false;
+        }
+
+        createMineralCard(item) {
+          const template = `
+            <div class="mineral-card" role="button" tabindex="0">
+              <div class="progressive-image">
+                <div class="placeholder skeleton"></div>
+                <picture>
+                  <source
+                    srcset="
+                      ${item.image.webp.small} 300w,
+                      ${item.image.webp.medium} 600w,
+                      ${item.image.webp.large} 900w
+                    "
+                    sizes="(max-width: 480px) 100vw,
+                           (max-width: 768px) 50vw,
+                           (max-width: 1024px) 33vw,
+                           25vw"
+                    type="image/webp">
+                  <source
+                    srcset="
+                      ${item.image.jpg.small} 300w,
+                      ${item.image.jpg.medium} 600w,
+                      ${item.image.jpg.large} 900w
+                    "
+                    sizes="(max-width: 480px) 100vw,
+                           (max-width: 768px) 50vw,
+                           (max-width: 1024px) 33vw,
+                           25vw"
+                    type="image/jpeg">
+                  <img
+                    data-src="${item.image.jpg.medium}"
+                    alt="${item.name}"
+                    class="mineral-image"
+                    loading="lazy">
+                </picture>
+              </div>
+              <div class="mineral-info">
+                <h3 class="mineral-name">${item.name}</h3>
+                <div class="mineral-properties">
+                  <p>Hardness: ${item.hardness}</p>
+                  <p>Type: ${item.type}</p>
+                  <p>Color: ${item.color}</p>
+                </div>
+              </div>
+            </div>
+          `;
+
+          const wrapper = document.createElement("div");
+          wrapper.innerHTML = template;
+          return wrapper.firstElementChild;
+        }
+
+        async fetchItems() {
+          // Simulate API response
+          return new Promise((resolve) => {
+            setTimeout(() => {
+              resolve([
+                {
+                  name: "Quartz",
+                  hardness: 7,
+                  type: "Silicate",
+                  color: "Clear to various colors",
+                  image: {
+                    webp: {
+                      small: "/images/minerals/quartz-small.webp",
+                      medium: "/images/minerals/quartz-medium.webp",
+                      large: "/images/minerals/quartz-large.webp",
+                    },
+                    jpg: {
+                      small: "/images/minerals/quartz-small.jpg",
+                      medium: "/images/minerals/quartz-medium.jpg",
+                      large: "/images/minerals/quartz-large.jpg",
+                    },
+                  },
+                },
+                // Add more items as needed
+              ]);
+            }, 500);
+          });
+        }
+      }
+
+      // Initialize mineral catalog
+      const catalog = new MineralCatalog(
+        document.getElementById("mineralGrid")
+      );
+
+      // Touch interaction for mineral cards
+      document.addEventListener("click", function (e) {
+        const card = e.target.closest(".mineral-card");
+        if (card) {
+          card.classList.toggle("zoomed");
+        }
+      });
+
+      // Touch interaction for glossary terms
+      document.querySelectorAll(".glossary-term").forEach((term) => {
+        term.addEventListener("touchstart", function (e) {
+          e.preventDefault();
+          this.classList.add("active");
+        });
+
+        term.addEventListener("touchend", function () {
+          this.classList.remove("active");
+        });
+      });
+
+      // Print functionality
+      document
+        .querySelector(".print-button")
+        .addEventListener("click", function () {
+          window.print();
+        });
+
+      // Save as PDF functionality
+      document
+        .querySelector(".save-button")
+        .addEventListener("click", function () {
+          // Implement PDF generation and download
+          console.log("Save as PDF clicked");
+        });
+    </script>
+  </body>
+</html>

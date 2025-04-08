@@ -1,0 +1,227 @@
+/* 
+ * Marks Minerals - Footer Component
+ * Mobile-first approach with responsive design
+ */
+
+/* Footer Container */
+.footer-container {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-lg) var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+/* Footer Content */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* Footer Brand */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-logo {
+  height: 60px;
+  width: auto;
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-tagline {
+  font-family: var(--font-accent);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Footer Links */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.footer-links-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.footer-links-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  color: white;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-list li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.footer-links-list a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links-list a:hover,
+.footer-links-list a:focus {
+  color: white;
+}
+
+/* Footer Contact */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.footer-contact-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  color: white;
+}
+
+.footer-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.footer-contact-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--accent-color);
+}
+
+/* Footer Social */
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-sm);
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background-color: var(--accent-color);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Small devices (480px and up) */
+@media (min-width: 480px) {
+  .footer-content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .footer-brand {
+    flex: 0 0 100%;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .footer-links {
+    flex: 0 0 45%;
+  }
+  
+  .footer-contact {
+    flex: 0 0 45%;
+  }
+}
+
+/* Medium devices (768px and up) */
+@media (min-width: 768px) {
+  .footer-container {
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+  
+  .footer-content {
+    flex-wrap: nowrap;
+  }
+  
+  .footer-brand {
+    flex: 0 0 25%;
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .footer-links {
+    flex: 0 0 35%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .footer-contact {
+    flex: 0 0 25%;
+  }
+  
+  .footer-logo {
+    height: 70px;
+  }
+}
+
+/* Large devices (1024px and up) */
+@media (min-width: 1024px) {
+  .footer-container {
+    padding: var(--spacing-xl) var(--spacing-xl);
+  }
+  
+  .footer-logo {
+    height: 80px;
+  }
+  
+  .footer-links-title,
+  .footer-contact-title {
+    font-size: 1.2rem;
+  }
+  
+  .footer-links-list a,
+  .footer-contact-item {
+    font-size: 1rem;
+  }
+} 

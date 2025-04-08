@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Collection - Mark's Minerals</title>
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/grid.css">
+    <link rel="stylesheet" href="../assets/css/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="nav-brand">
+                <a href="../index.html">Mark's Minerals</a>
+            </div>
+            <button type="button" class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="products.html" aria-current="page">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="collection-header">
+            <div class="container">
+                <h1>Our Mineral Collection</h1>
+                <p>Explore our carefully curated selection of rare and beautiful minerals from around the world, each piece telling its own unique geological story</p>
+            </div>
+        </section>
+
+        <section class="collection-filters">
+            <div class="container">
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label for="mineral-type">Mineral Type</label>
+                        <select id="mineral-type" class="filter-select">
+                            <option value="all">All Types</option>
+                            <option value="crystals">Crystals</option>
+                            <option value="gems">Gems</option>
+                            <option value="minerals">Minerals</option>
+                            <option value="fluorescent">Fluorescent</option>
+                            <option value="rare">Rare Specimens</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="origin">Origin</label>
+                        <select id="origin" class="filter-select">
+                            <option value="all">All Locations</option>
+                            <option value="usa">United States</option>
+                            <option value="brazil">Brazil</option>
+                            <option value="africa">Africa</option>
+                            <option value="asia">Asia</option>
+                            <option value="europe">Europe</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="color">Color</label>
+                        <select id="color" class="filter-select">
+                            <option value="all">All Colors</option>
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                            <option value="purple">Purple</option>
+                            <option value="red">Red</option>
+                            <option value="clear">Clear/White</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="sort">Sort By</label>
+                        <select id="sort" class="filter-select">
+                            <option value="featured">Featured</option>
+                            <option value="new">Newest</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="collection-gallery">
+            <div class="container">
+                <div class="gallery-grid">
+                    <!-- Featured Specimen -->
+                    <div class="specimen-card featured" data-type="fluorescent" data-origin="usa" data-color="blue" data-date="2024-04-08">
+                        <div class="specimen-image">
+                            <img src="https://images.unsplash.com/photo-1618677661551-d170e9221572?w=800&q=80"
+                                 alt="Large blue-green fluorescent azurite specimen with crystalline structure"
+                                 loading="lazy">
+                            <div class="specimen-overlay">
+                                <span class="specimen-tag">Featured</span>
+                                <button type="button" class="view-details" aria-label="View specimen details">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="specimen-info">
+                            <h3>Fluorescent Azurite</h3>
+                            <p>Exceptional blue-green azurite specimen with pristine crystal formation</p>
+                            <div class="specimen-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Vermont, USA</span>
+                                <span><i class="fas fa-gem"></i> Fluorescent</span>
+                            </div>
+                            <div class="specimen-price">
+                                <span class="price">$2,499</span>
+                                <button type="button" class="btn btn-primary buy-now">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Regular Specimens -->
+                    <div class="specimen-card" data-type="crystal" data-origin="brazil" data-color="purple">
+                        <div class="specimen-image">
+                            <img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=800&q=80"
+                                 alt="Large Brazilian amethyst geode with deep purple crystalline interior"
+                                 loading="lazy">
+                            <div class="specimen-overlay">
+                                <button type="button" class="view-details" aria-label="View specimen details">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="specimen-info">
+                            <h3>Amethyst Geode</h3>
+                            <p>Stunning amethyst geode with deep purple crystals</p>
+                            <div class="specimen-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Brazil</span>
+                                <span><i class="fas fa-gem"></i> Crystal</span>
+                            </div>
+                            <div class="specimen-price">
+                                <span class="price">$899</span>
+                                <button type="button" class="btn btn-primary buy-now">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="specimen-card" data-type="gem" data-origin="asia" data-color="blue">
+                        <div class="specimen-image">
+                            <img src="https://images.unsplash.com/photo-1615484477778-ca3b77940c25?w=800&q=80"
+                                 alt="Natural uncut Sri Lankan blue sapphire crystal specimen"
+                                 loading="lazy">
+                            <div class="specimen-overlay">
+                                <button type="button" class="view-details" aria-label="View specimen details">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="specimen-info">
+                            <h3>Raw Sapphire</h3>
+                            <p>Natural uncut sapphire crystal with exceptional color</p>
+                            <div class="specimen-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Sri Lanka</span>
+                                <span><i class="fas fa-gem"></i> Gem</span>
+                            </div>
+                            <div class="specimen-price">
+                                <span class="price">$1,299</span>
+                                <button type="button" class="btn btn-primary buy-now">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="specimen-card" data-type="crystal" data-origin="usa" data-color="clear">
+                        <div class="specimen-image">
+                            <img src="https://images.unsplash.com/photo-1617917572835-5ab878656dcb?w=800&q=80"
+                                 alt="Arkansas clear quartz crystal cluster with multiple termination points"
+                                 loading="lazy">
+                            <div class="specimen-overlay">
+                                <button type="button" class="view-details" aria-label="View specimen details">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="specimen-info">
+                            <h3>Quartz Cluster</h3>
+                            <p>Clear quartz crystal cluster with multiple terminations</p>
+                            <div class="specimen-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Arkansas, USA</span>
+                                <span><i class="fas fa-gem"></i> Crystal</span>
+                            </div>
+                            <div class="specimen-price">
+                                <span class="price">$599</span>
+                                <button type="button" class="btn btn-primary buy-now">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="load-more">
+                    <button type="button" id="loadMoreBtn" class="btn btn-primary">Load More</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specimen Modal -->
+        <div id="specimen-modal" class="modal">
+            <div class="modal-content">
+                <button type="button" class="modal-close" aria-label="Close specimen details modal">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-body">
+                    <div class="specimen-gallery">
+                        <img src="https://picsum.photos/400/400?random=1" alt="Selected mineral specimen" id="modal-image">
+                        <div class="specimen-thumbnails">
+                            <!-- Thumbnails will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="specimen-details">
+                        <h2 id="modal-title">Specimen Details</h2>
+                        <p id="modal-description"></p>
+                        <div class="specimen-attributes">
+                            <div class="attribute">
+                                <span class="attribute-label">Origin:</span>
+                                <span id="modal-origin"></span>
+                            </div>
+                            <div class="attribute">
+                                <span class="attribute-label">Type:</span>
+                                <span id="modal-type"></span>
+                            </div>
+                            <div class="attribute">
+                                <span class="attribute-label">Size:</span>
+                                <span id="modal-size"></span>
+                            </div>
+                        </div>
+                        <div class="specimen-cta">
+                            <a href="appointment.html" class="btn btn-primary">Schedule Viewing</a>
+                            <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Mark's Minerals. All rights reserved.</p>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/products.js"></script>
+</body>
+</html> 

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Tour - Mark's Minerals</title>
+    <meta name="description" content="Take a virtual 3D tour of Mark's Minerals collection. Explore our specimens in detail from the comfort of your home.">
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/virtual-tour.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="nav-brand">
+                <a href="../index.html">Mark's Minerals</a>
+            </div>
+            <button type="button" class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Virtual Collection Tour</h1>
+            <p>Experience our remarkable mineral specimens in stunning 3D detail</p>
+        </section>
+
+        <section class="virtual-tour-intro">
+            <div class="container">
+                <div class="tour-features">
+                    <div class="feature-card">
+                        <i class="fas fa-vr-cardboard"></i>
+                        <h3>3D Viewing</h3>
+                        <p>Examine specimens from every angle in high resolution</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-ruler-combined"></i>
+                        <h3>Real Measurements</h3>
+                        <p>Get accurate size and proportion information</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-info-circle"></i>
+                        <h3>Detailed Info</h3>
+                        <p>Access comprehensive specimen information</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="virtual-showcase">
+            <div class="container">
+                <div class="showcase-grid">
+                    <div class="showcase-item">
+                        <div class="model-viewer-container" id="specimen1">
+                            <!-- 3D viewer will be initialized here by JavaScript -->
+                            <div class="placeholder-image">
+                                <img src="../assets/images/specimens/amethyst-3d.jpg" alt="3D view of Amethyst Geode" class="preview-image">
+                                <button class="view-3d-btn" data-model="amethyst-geode">
+                                    <i class="fas fa-cube"></i> View in 3D
+                                </button>
+                            </div>
+                        </div>
+                        <div class="specimen-details">
+                            <h3>Amethyst Geode</h3>
+                            <p>Brazilian specimen with deep purple crystals</p>
+                            <ul class="specimen-stats">
+                                <li><strong>Size:</strong> 12" x 8" x 6"</li>
+                                <li><strong>Weight:</strong> 4.2 kg</li>
+                                <li><strong>Origin:</strong> Rio Grande do Sul, Brazil</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="showcase-item">
+                        <div class="model-viewer-container" id="specimen2">
+                            <div class="placeholder-image">
+                                <img src="../assets/images/specimens/fluorite-3d.jpg" alt="3D view of Fluorite Cluster" class="preview-image">
+                                <button class="view-3d-btn" data-model="fluorite-cluster">
+                                    <i class="fas fa-cube"></i> View in 3D
+                                </button>
+                            </div>
+                        </div>
+                        <div class="specimen-details">
+                            <h3>Fluorite Cluster</h3>
+                            <p>Exceptional green and purple zoning</p>
+                            <ul class="specimen-stats">
+                                <li><strong>Size:</strong> 6" x 5" x 4"</li>
+                                <li><strong>Weight:</strong> 1.8 kg</li>
+                                <li><strong>Origin:</strong> Hunan Province, China</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tour-instructions">
+                    <h3>How to Use the Virtual Tour</h3>
+                    <ul>
+                        <li><i class="fas fa-mouse"></i> Click and drag to rotate</li>
+                        <li><i class="fas fa-search-plus"></i> Scroll to zoom in/out</li>
+                        <li><i class="fas fa-arrows-alt"></i> Double-click for fullscreen</li>
+                        <li><i class="fas fa-mobile-alt"></i> Pinch to zoom on mobile</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="vr-experience">
+            <div class="container">
+                <h2>VR Experience Coming Soon</h2>
+                <p>Experience our collection in virtual reality. Sign up to be notified when our VR tour launches.</p>
+                <form class="vr-notify-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Notify Me</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Mark's Minerals. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script src="../assets/js/virtual-tour.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html> 

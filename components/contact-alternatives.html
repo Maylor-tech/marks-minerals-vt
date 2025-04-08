@@ -1,0 +1,170 @@
+<div class="contact-alternatives-component">
+    <h2>Other Ways to Reach Us</h2>
+    <div class="contact-methods">
+        <div class="contact-method">
+            <div class="method-icon">📞</div>
+            <h3>Phone</h3>
+            <p>Call us directly at</p>
+            <a href="tel:+1234567890" class="contact-link">+1&nbsp;(234)&nbsp;567&#8209;890</a>
+            <p class="availability">Available Monday-Friday, 9 AM - 5 PM EST</p>
+        </div>
+
+        <div class="contact-method">
+            <div class="method-icon">✉️</div>
+            <h3>Email</h3>
+            <p>Send us an email at</p>
+            <a href="mailto:contact@marksminerals.com" class="contact-link">contact@marksminerals.com</a>
+            <p class="availability">We typically respond within 24 hours</p>
+        </div>
+
+        <div class="contact-method">
+            <div class="method-icon">💬</div>
+            <h3>Live Chat</h3>
+            <p>Chat with our experts</p>
+            <button type="button" class="chat-button" id="startChat">Start Chat</button>
+            <p class="availability">Available during business hours</p>
+        </div>
+
+        <div class="contact-method">
+            <div class="method-icon">📍</div>
+            <h3>Visit Us</h3>
+            <p>Stop by our location</p>
+            <address class="address">
+                123 Mineral Street<br>
+                Crystal City, ST 12345<br>
+                United States
+            </address>
+            <p class="availability">Open Monday-Saturday, 10 AM - 6 PM</p>
+        </div>
+    </div>
+</div>
+
+<style>
+.contact-alternatives-component {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-alternatives-component h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.contact-method {
+    text-align: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-method:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.method-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-method h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.contact-method p {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.contact-link {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0.5rem 0;
+    transition: color 0.2s;
+}
+
+.contact-link:hover {
+    color: #0056b3;
+}
+
+.availability {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 0.5rem;
+}
+
+.chat-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin: 0.5rem 0;
+}
+
+.chat-button:hover {
+    background: #0056b3;
+}
+
+.address {
+    font-style: normal;
+    line-height: 1.5;
+    color: #666;
+    margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+    .contact-alternatives-component {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .contact-methods {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+</style>
+
+<script>
+class ContactAlternatives {
+    constructor() {
+        this.setupEventListeners();
+    }
+
+    setupEventListeners() {
+        const chatButton = document.getElementById('startChat');
+        if (chatButton) {
+            chatButton.addEventListener('click', () => this.startChat());
+        }
+    }
+
+    startChat() {
+        // This would typically integrate with a chat service
+        alert('Chat feature coming soon! In the meantime, please use email or phone to contact us.');
+    }
+}
+
+// Initialize contact alternatives when component is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new ContactAlternatives();
+});
+</script> 

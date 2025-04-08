@@ -1,0 +1,351 @@
+/* Gallery Styles */
+.mineral-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.mineral-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mineral-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.mineral-image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* 4:3 Aspect Ratio */
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+.mineral-image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.mineral-image-container img.lazy {
+    opacity: 0;
+}
+
+.mineral-image-container img.loaded {
+    opacity: 1;
+}
+
+.mineral-image-container img.load-error {
+    opacity: 1;
+    filter: grayscale(100%);
+}
+
+/* Placeholder animation */
+.mineral-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    z-index: 1;
+}
+
+.mineral-image-container img.loaded + .mineral-image-container::before {
+    display: none;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Responsive image sizes */
+@media (max-width: 480px) {
+    .mineral-image-container {
+        padding-top: 100%; /* 1:1 Aspect Ratio for mobile */
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .mineral-image-container {
+        padding-top: 75%; /* 4:3 Aspect Ratio for tablets */
+    }
+}
+
+@media (min-width: 769px) {
+    .mineral-image-container {
+        padding-top: 66.67%; /* 3:2 Aspect Ratio for desktop */
+    }
+}
+
+.mineral-info {
+    padding: 1.5rem;
+}
+
+.mineral-info h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.mineral-description {
+    margin: 0 0 1rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.mineral-price {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.btn-details {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-details:hover {
+    background-color: #2980b9;
+}
+
+/* Filter Styles */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin: 0 2rem 2rem;
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+}
+
+.filter-container label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.filter-container select {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+}
+
+/* Lightbox Styles */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.lightbox-image-container {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.lightbox-caption {
+    padding: 1.5rem;
+    background-color: #fff;
+}
+
+.lightbox-caption h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.lightbox-caption p {
+    margin: 0;
+    color: #666;
+}
+
+.lightbox-controls {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.lightbox-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.lightbox-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.lightbox-prev {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+}
+
+.lightbox-zoom-in {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.lightbox-zoom-out {
+    position: absolute;
+    bottom: 1rem;
+    right: 4rem;
+}
+
+.lightbox-rotate {
+    position: absolute;
+    bottom: 1rem;
+    right: 7rem;
+}
+
+.lightbox-rotate.has-360 {
+    background-color: rgba(52, 152, 219, 0.5);
+}
+
+.lightbox-rotate.has-360:hover {
+    background-color: rgba(52, 152, 219, 0.7);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .mineral-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .filters {
+        flex-direction: column;
+        padding: 1rem;
+        margin: 0 1rem 1rem;
+    }
+    
+    .filter-container {
+        width: 100%;
+    }
+    
+    .lightbox-image-container {
+        height: 50vh;
+    }
+    
+    .lightbox-controls {
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+    
+    .lightbox-button {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+    
+    .lightbox-zoom-in,
+    .lightbox-zoom-out,
+    .lightbox-rotate {
+        bottom: 0.5rem;
+    }
+    
+    .lightbox-zoom-out {
+        right: 3.5rem;
+    }
+    
+    .lightbox-rotate {
+        right: 6.5rem;
+    }
+} 

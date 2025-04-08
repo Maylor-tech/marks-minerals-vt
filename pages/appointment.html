@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment - Mark's Minerals</title>
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/appointment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="nav-brand">
+                <a href="../index.html">Mark's Minerals</a>
+            </div>
+            <button type="button" class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Book an Appointment</h1>
+            <p>Schedule a visit to explore our mineral collection in person</p>
+        </section>
+
+        <section class="appointment-instructions">
+            <div class="instructions-container">
+                <h2>Appointment Process</h2>
+                <ol class="instructions-list">
+                    <li><strong>Select a Date &amp; Time:</strong> Choose your preferred appointment slot from our calendar.</li>
+                    <li><strong>Provide Your Information:</strong> Enter your contact details so we can confirm your appointment.</li>
+                    <li><strong>Review &amp; Confirm:</strong> Review your appointment details and submit your request.</li>
+                    <li><strong>Confirmation:</strong> You'll receive an email confirmation with your appointment details.</li>
+                </ol>
+                <div class="appointment-note">
+                    <p><i class="fas fa-info-circle"></i> For questions or immediate assistance, please call us at <a href="tel:+18023764282">(802)&nbsp;376&#8209;4282</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="appointment-form-container">
+            <div class="form-progress">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Date &amp; Time</div>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Your Information</div>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Confirmation</div>
+                </div>
+            </div>
+
+            <form id="appointment-form" class="appointment-form">
+                <!-- Step 1: Date & Time Selection -->
+                <div class="form-step active" data-step="1">
+                    <h3>Select Appointment Date &amp; Time</h3>
+                    <div class="calendar-container">
+                        <div class="calendar-header">
+                            <button type="button" id="prev-month" class="calendar-nav-btn" aria-label="Previous month">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <h4 id="current-month">September 2024</h4>
+                            <button type="button" id="next-month" class="calendar-nav-btn" aria-label="Next month">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="calendar-weekdays">
+                            <div>Sun</div>
+                            <div>Mon</div>
+                            <div>Tue</div>
+                            <div>Wed</div>
+                            <div>Thu</div>
+                            <div>Fri</div>
+                            <div>Sat</div>
+                        </div>
+                        <div id="calendar-days" class="calendar-days">
+                            <!-- Calendar days will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="time-slots-container">
+                        <h4>Available Time Slots</h4>
+                        <div id="time-slots" class="time-slots">
+                            <!-- Time slots will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-next" data-next="2">Next</button>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Personal Information -->
+                <div class="form-step" data-step="2">
+                    <h3>Your Information</h3>
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="interests">What are you interested in seeing? (Optional)</label>
+                        <select id="interests" name="interests" multiple>
+                            <option value="crystals">Crystals</option>
+                            <option value="gems">Gems</option>
+                            <option value="specimens">Specimens</option>
+                            <option value="fossils">Fossils</option>
+                            <option value="meteorites">Meteorites</option>
+                        </select>
+                        <small>Hold Ctrl/Cmd to select multiple options</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Additional Notes (Optional)</label>
+                        <textarea id="notes" name="notes" rows="3"></textarea>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-prev" data-prev="1">Previous</button>
+                        <button type="button" class="btn btn-next" data-next="3">Next</button>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Confirmation -->
+                <div class="form-step" data-step="3">
+                    <h3>Confirm Your Appointment</h3>
+                    <div class="confirmation-summary">
+                        <h4>Appointment Details</h4>
+                        <div class="summary-item">
+                            <span class="summary-label">Date:</span>
+                            <span id="summary-date" class="summary-value"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Time:</span>
+                            <span id="summary-time" class="summary-value"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Name:</span>
+                            <span id="summary-name" class="summary-value"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Email:</span>
+                            <span id="summary-email" class="summary-value"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Phone:</span>
+                            <span id="summary-phone" class="summary-value"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Interests:</span>
+                            <span id="summary-interests" class="summary-value"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Notes:</span>
+                            <span id="summary-notes" class="summary-value"></span>
+                        </div>
+                    </div>
+                    <div class="confirmation-terms">
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">I confirm that the information provided is accurate and I agree to the appointment terms.</label>
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-prev" data-prev="2">Previous</button>
+                        <button type="submit" class="btn btn-submit">Confirm Appointment</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+        
+        <!-- Success Message (Hidden by default) -->
+        <div id="appointment-success" class="appointment-success">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Appointment Confirmed!</h3>
+            <p>Thank you for booking an appointment with Mark's Minerals. We've sent a confirmation email with your appointment details.</p>
+            <p>We look forward to seeing you on <span id="success-date"></span> at <span id="success-time"></span>.</p>
+            <a href="../index.html" class="btn btn-home">Return to Home</a>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Mark's Minerals. All rights reserved.</p>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/appointment.js"></script>
+</body>
+</html> 

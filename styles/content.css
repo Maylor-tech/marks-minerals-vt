@@ -1,0 +1,463 @@
+/* Base Mobile-First Styles */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --border-color: #dee2e6;
+    --spacing-unit: 1rem;
+}
+
+/* Article Template Styles */
+.article-container {
+    width: 100%;
+    padding: var(--spacing-unit);
+    line-height: 1.6;
+}
+
+.article-header {
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+}
+
+.article-title {
+    font-size: 1.75rem;
+    line-height: 1.2;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-unit);
+}
+
+.article-meta {
+    color: var(--secondary-color);
+    font-size: 0.875rem;
+    margin-bottom: var(--spacing-unit);
+}
+
+.article-content {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.article-content h2 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin: calc(var(--spacing-unit) * 1.5) 0 var(--spacing-unit);
+}
+
+.article-content h3 {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin: calc(var(--spacing-unit) * 1.25) 0 var(--spacing-unit);
+}
+
+.article-content p {
+    margin-bottom: 1.5rem;
+}
+
+.article-content ul, 
+.article-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.article-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Interactive Mineral Guide Styles */
+.mineral-guide {
+    background: var(--light-bg);
+    border-radius: 8px;
+    padding: var(--spacing-unit);
+    margin: calc(var(--spacing-unit) * 1.5) 0;
+}
+
+.mineral-filters {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-unit);
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+}
+
+.filter-group {
+    width: 100%;
+}
+
+.filter-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.filter-select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: white;
+    font-size: 1rem;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+}
+
+.mineral-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-unit);
+}
+
+.mineral-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.mineral-image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* 4:3 Aspect Ratio */
+    overflow: hidden;
+}
+
+.mineral-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.mineral-card.zoomed .mineral-image {
+    transform: scale(1.5);
+    cursor: zoom-out;
+}
+
+.mineral-info {
+    padding: var(--spacing-unit);
+}
+
+.mineral-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.mineral-properties {
+    font-size: 0.875rem;
+    color: var(--secondary-color);
+}
+
+/* Touch-friendly Navigation */
+.touch-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    padding: var(--spacing-unit);
+    display: flex;
+    justify-content: space-around;
+    z-index: 1000;
+}
+
+.touch-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    min-width: 4rem;
+}
+
+.touch-nav-item i {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.touch-nav-item.active {
+    color: var(--primary-color);
+}
+
+/* Glossary Tooltip System */
+.glossary-term {
+    color: var(--primary-color);
+    border-bottom: 1px dotted var(--primary-color);
+    cursor: help;
+    position: relative;
+}
+
+.tooltip {
+    position: absolute;
+    background: var(--text-color);
+    color: white;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    max-width: 280px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 0.5rem;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--text-color);
+}
+
+.glossary-term:hover .tooltip,
+.glossary-term:focus .tooltip {
+    opacity: 1;
+}
+
+/* Printable Specimen Care Guide */
+.care-guide {
+    background: white;
+    padding: var(--spacing-unit);
+    margin: calc(var(--spacing-unit) * 1.5) 0;
+}
+
+.care-guide-header {
+    text-align: center;
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+}
+
+.care-guide-title {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-unit);
+}
+
+.care-section {
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+    page-break-inside: avoid;
+}
+
+.care-section-title {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-unit);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.care-instructions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-unit);
+}
+
+.care-step {
+    background: var(--light-bg);
+    padding: var(--spacing-unit);
+    border-radius: 8px;
+}
+
+.care-step-number {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.care-step-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.care-step-description {
+    color: var(--secondary-color);
+    font-size: 0.875rem;
+}
+
+.print-controls {
+    position: fixed;
+    bottom: 4rem;
+    right: var(--spacing-unit);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 999;
+}
+
+.print-button,
+.save-button {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 50%;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.print-button:active,
+.save-button:active {
+    transform: scale(0.95);
+}
+
+.print-button {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.save-button {
+    background-color: var(--success-color);
+    color: white;
+}
+
+/* Tablet Breakpoint (768px) */
+@media (min-width: 768px) {
+    .article-container {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: calc(var(--spacing-unit) * 2);
+    }
+
+    .article-title {
+        font-size: 2rem;
+    }
+
+    .mineral-filters {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .filter-group {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .mineral-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .care-instructions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .print-controls {
+        flex-direction: row;
+        bottom: var(--spacing-unit);
+    }
+
+    .print-button,
+    .save-button {
+        width: auto;
+        height: auto;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+    }
+}
+
+/* Desktop Breakpoint (1024px) */
+@media (min-width: 1024px) {
+    .article-container {
+        max-width: 960px;
+    }
+
+    .article-title {
+        font-size: 2.5rem;
+    }
+
+    .mineral-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .care-instructions {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Large Desktop Breakpoint (1440px) */
+@media (min-width: 1440px) {
+    .article-container {
+        max-width: 1200px;
+    }
+
+    .mineral-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .touch-nav,
+    .print-controls {
+        display: none;
+    }
+
+    .care-guide {
+        padding: 0;
+    }
+
+    .care-section {
+        break-inside: avoid;
+    }
+
+    .mineral-card {
+        break-inside: avoid;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .mineral-card {
+        cursor: pointer;
+    }
+
+    .glossary-term {
+        padding: 0.25rem 0;
+    }
+
+    .tooltip {
+        display: none;
+    }
+
+    .glossary-term:active .tooltip {
+        display: block;
+        opacity: 1;
+    }
+}
+
+/* Image Loading Optimization */
+.mineral-image {
+    loading: lazy;
+}
+
+/* High DPI Screen Optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .mineral-image {
+        image-rendering: -webkit-optimize-contrast;
+    }
+} 

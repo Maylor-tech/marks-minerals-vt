@@ -1,0 +1,66 @@
+<!-- 
+ * Marks Minerals - Navigation Component
+ * Mobile-first approach with responsive design
+ -->
+
+<header class="nav-container">
+  <nav class="main-nav">
+    <div class="nav-brand">
+      <img src="/assets/images/logo.svg" alt="Mark's Minerals Logo" class="nav-brand-logo">
+      <div class="nav-brand-text">
+        <a href="/" class="nav-brand-name">Mark's Minerals</a>
+        <span class="nav-brand-tagline">By Appointment Only</span>
+      </div>
+    </div>
+    
+    <button type="button" class="nav-toggle" aria-label="Toggle navigation">
+      <span class="hamburger"></span>
+    </button>
+    
+    <ul class="nav-menu">
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/pages/products.html">Products</a></li>
+      <li><a href="/pages/about.html">About</a></li>
+      <li><a href="/pages/contact.html">Contact</a></li>
+      <li><a href="/pages/appointment.html">Book Appointment</a></li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', function() {
+        navToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+    }
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const isClickInside = navMenu.contains(event.target) || navToggle.contains(event.target);
+      
+      if (!isClickInside && navMenu.classList.contains('active')) {
+        navToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
+    
+    // Set active menu item based on current page
+    const currentPath = window.location.pathname;
+    const menuLinks = document.querySelectorAll('.nav-menu a');
+    
+    menuLinks.forEach(link => {
+      if (link.getAttribute('href') === currentPath) {
+        link.classList.add('active');
+      } else if (currentPath === '/' && link.getAttribute('href') === '/') {
+        link.classList.add('active');
+      } else if (currentPath !== '/' && link.getAttribute('href').includes(currentPath) && link.getAttribute('href') !== '/') {
+        link.classList.add('active');
+      }
+    });
+  });
+</script> 

@@ -1,0 +1,177 @@
+<div class="specimen-details-component">
+    <div class="specimen-header">
+        <h1 class="specimen-title">Specimen Name</h1>
+        <div class="specimen-meta">
+            <span class="specimen-id">ID: <span id="specimenId">-</span></span>
+            <span class="specimen-category">Category: <span id="specimenCategory">-</span></span>
+        </div>
+    </div>
+
+    <div class="specimen-description">
+        <h2>Description</h2>
+        <p id="specimenDescription">Loading description...</p>
+    </div>
+
+    <div class="specimen-specifications">
+        <h2>Specifications</h2>
+        <table class="specs-table">
+            <tbody>
+                <tr>
+                    <th scope="row">Mineral Type</th>
+                    <td id="mineralType">-</td>
+                </tr>
+                <tr>
+                    <th scope="row">Location</th>
+                    <td id="location">-</td>
+                </tr>
+                <tr>
+                    <th scope="row">Size</th>
+                    <td id="size">-</td>
+                </tr>
+                <tr>
+                    <th scope="row">Weight</th>
+                    <td id="weight">-</td>
+                </tr>
+                <tr>
+                    <th scope="row">Color</th>
+                    <td id="color">-</td>
+                </tr>
+                <tr>
+                    <th scope="row">Hardness</th>
+                    <td id="hardness">-</td>
+                </tr>
+                <tr>
+                    <th scope="row">Collection Date</th>
+                    <td id="collectionDate">-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+.specimen-details-component {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.specimen-header {
+    margin-bottom: 2rem;
+}
+
+.specimen-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.specimen-meta {
+    display: flex;
+    gap: 2rem;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.specimen-description {
+    margin-bottom: 2rem;
+}
+
+.specimen-description h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.specimen-specifications h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.specs-table th,
+.specs-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.specs-table th {
+    width: 30%;
+    color: #666;
+    font-weight: 600;
+}
+
+.specs-table td {
+    color: #333;
+}
+
+@media (max-width: 600px) {
+    .specimen-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .specs-table th,
+    .specs-table td {
+        padding: 0.5rem;
+    }
+}
+</style>
+
+<script>
+class SpecimenDetails {
+    constructor() {
+        this.loadSpecimenData();
+    }
+
+    async loadSpecimenData() {
+        // This would typically fetch from an API
+        // For now, we'll simulate loading data
+        const specimenData = {
+            id: "SP-2024-001",
+            name: "Amethyst Crystal",
+            category: "Quartz",
+            description: "A beautiful purple amethyst crystal with excellent clarity and formation.",
+            specifications: {
+                mineralType: "Amethyst",
+                location: "Brazil",
+                size: "5 x 3 x 2 cm",
+                weight: "45g",
+                color: "Purple",
+                hardness: "7 on Mohs scale",
+                collectionDate: "January 15, 2024"
+            }
+        };
+
+        this.updateUI(specimenData);
+    }
+
+    updateUI(data) {
+        document.querySelector('.specimen-title').textContent = data.name;
+        document.getElementById('specimenId').textContent = data.id;
+        document.getElementById('specimenCategory').textContent = data.category;
+        document.getElementById('specimenDescription').textContent = data.description;
+
+        const specs = data.specifications;
+        document.getElementById('mineralType').textContent = specs.mineralType;
+        document.getElementById('location').textContent = specs.location;
+        document.getElementById('size').textContent = specs.size;
+        document.getElementById('weight').textContent = specs.weight;
+        document.getElementById('color').textContent = specs.color;
+        document.getElementById('hardness').textContent = specs.hardness;
+        document.getElementById('collectionDate').textContent = specs.collectionDate;
+    }
+}
+
+// Initialize details when component is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new SpecimenDetails();
+});
+</script> 

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specimens - Mark's Minerals</title>
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="nav-brand">
+                <img src="../assets/images/logo.svg" alt="Mark's Minerals Logo" class="nav-brand-logo">
+                <div class="nav-brand-text">
+                    <a href="../index.html" class="nav-brand-name">Mark's Minerals</a>
+                    <span class="nav-brand-tagline">By Appointment Only</span>
+                </div>
+            </div>
+            <button type="button" class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Mineral Specimens</h1>
+                <p>Browse our collection of high-quality mineral specimens from around the world</p>
+            </div>
+        </section>
+
+        <!-- Filter System Component -->
+        <section class="filter-system">
+            <div class="container">
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label for="type-filter">Type</label>
+                        <select id="type-filter" class="filter-select">
+                            <option value="">All Types</option>
+                            <option value="quartz">Quartz</option>
+                            <option value="amethyst">Amethyst</option>
+                            <option value="malachite">Malachite</option>
+                            <option value="fluorite">Fluorite</option>
+                            <option value="pyrite">Pyrite</option>
+                            <option value="calcite">Calcite</option>
+                            <option value="tourmaline">Tourmaline</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="location-filter">Location</label>
+                        <select id="location-filter" class="filter-select">
+                            <option value="">All Locations</option>
+                            <option value="brazil">Brazil</option>
+                            <option value="usa">United States</option>
+                            <option value="congo">Congo</option>
+                            <option value="spain">Spain</option>
+                            <option value="madagascar">Madagascar</option>
+                            <option value="australia">Australia</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="price-filter">Price Range</label>
+                        <select id="price-filter" class="filter-select">
+                            <option value="">All Prices</option>
+                            <option value="0-50">$0 - $50</option>
+                            <option value="50-100">$50 - $100</option>
+                            <option value="100-250">$100 - $250</option>
+                            <option value="250-500">$250 - $500</option>
+                            <option value="500+">$500+</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary filter-apply">Apply Filters</button>
+                    <button type="button" class="btn btn-outline filter-reset">Reset</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specimen Grid Component with Pagination -->
+        <section class="specimen-grid-section">
+            <div class="container">
+                <div class="specimen-grid">
+                    <!-- Specimen Card 1 -->
+                    <div class="specimen-card">
+                        <div class="specimen-image-container">
+                            <img src="../assets/images/specimens/quartz-1.jpg" alt="Quartz Crystal" class="specimen-image">
+                            <button type="button" class="quick-view-btn" data-specimen-id="1">Quick View</button>
+                        </div>
+                        <div class="specimen-details">
+                            <h3>Quartz Crystal</h3>
+                            <p class="specimen-location">Arkansas, USA</p>
+                            <p class="specimen-description">Clear quartz crystal with excellent transparency and natural termination.</p>
+                            <div class="specimen-footer">
+                                <span class="specimen-price">$75.00</span>
+                                <a href="specimen-detail.html?id=1" class="btn btn-outline">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specimen Card 2 -->
+                    <div class="specimen-card">
+                        <div class="specimen-image-container">
+                            <img src="../assets/images/specimens/amethyst-1.jpg" alt="Amethyst Cluster" class="specimen-image">
+                            <button type="button" class="quick-view-btn" data-specimen-id="2">Quick View</button>
+                        </div>
+                        <div class="specimen-details">
+                            <h3>Amethyst Cluster</h3>
+                            <p class="specimen-location">Brazil</p>
+                            <p class="specimen-description">Deep purple amethyst cluster with multiple crystal points.</p>
+                            <div class="specimen-footer">
+                                <span class="specimen-price">$120.00</span>
+                                <a href="specimen-detail.html?id=2" class="btn btn-outline">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specimen Card 3 -->
+                    <div class="specimen-card">
+                        <div class="specimen-image-container">
+                            <img src="../assets/images/specimens/malachite-1.jpg" alt="Malachite" class="specimen-image">
+                            <button type="button" class="quick-view-btn" data-specimen-id="3">Quick View</button>
+                        </div>
+                        <div class="specimen-details">
+                            <h3>Malachite</h3>
+                            <p class="specimen-location">Congo</p>
+                            <p class="specimen-description">Botryoidal malachite with rich green coloration and banded patterns.</p>
+                            <div class="specimen-footer">
+                                <span class="specimen-price">$95.00</span>
+                                <a href="specimen-detail.html?id=3" class="btn btn-outline">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specimen Card 4 -->
+                    <div class="specimen-card">
+                        <div class="specimen-image-container">
+                            <img src="../assets/images/specimens/fluorite-1.jpg" alt="Fluorite" class="specimen-image">
+                            <button type="button" class="quick-view-btn" data-specimen-id="4">Quick View</button>
+                        </div>
+                        <div class="specimen-details">
+                            <h3>Fluorite</h3>
+                            <p class="specimen-location">Illinois, USA</p>
+                            <p class="specimen-description">Purple fluorite with cubic crystal habit and excellent clarity.</p>
+                            <div class="specimen-footer">
+                                <span class="specimen-price">$65.00</span>
+                                <a href="specimen-detail.html?id=4" class="btn btn-outline">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specimen Card 5 -->
+                    <div class="specimen-card">
+                        <div class="specimen-image-container">
+                            <img src="../assets/images/specimens/pyrite-1.jpg" alt="Pyrite" class="specimen-image">
+                            <button type="button" class="quick-view-btn" data-specimen-id="5">Quick View</button>
+                        </div>
+                        <div class="specimen-details">
+                            <h3>Pyrite</h3>
+                            <p class="specimen-location">Spain</p>
+                            <p class="specimen-description">Cubic pyrite crystals with metallic luster and golden color.</p>
+                            <div class="specimen-footer">
+                                <span class="specimen-price">$45.00</span>
+                                <a href="specimen-detail.html?id=5" class="btn btn-outline">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specimen Card 6 -->
+                    <div class="specimen-card">
+                        <div class="specimen-image-container">
+                            <img src="../assets/images/specimens/calcite-1.jpg" alt="Calcite" class="specimen-image">
+                            <button type="button" class="quick-view-btn" data-specimen-id="6">Quick View</button>
+                        </div>
+                        <div class="specimen-details">
+                            <h3>Calcite</h3>
+                            <p class="specimen-location">Mexico</p>
+                            <p class="specimen-description">Orange calcite with rhombohedral crystal habit and vitreous luster.</p>
+                            <div class="specimen-footer">
+                                <span class="specimen-price">$55.00</span>
+                                <a href="specimen-detail.html?id=6" class="btn btn-outline">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specimen Card 7 -->
+                    <div class="specimen-card">
+                        <div class="specimen-image-container">
+                            <img src="../assets/images/specimens/tourmaline-1.jpg" alt="Tourmaline" class="specimen-image">
+                            <button type="button" class="quick-view-btn" data-specimen-id="7">Quick View</button>
+                        </div>
+                        <div class="specimen-details">
+                            <h3>Tourmaline</h3>
+                            <p class="specimen-location">Madagascar</p>
+                            <p class="specimen-description">Pink tourmaline crystal with prismatic habit and excellent color.</p>
+                            <div class="specimen-footer">
+                                <span class="specimen-price">$180.00</span>
+                                <a href="specimen-detail.html?id=7" class="btn btn-outline">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specimen Card 8 -->
+                    <div class="specimen-card">
+                        <div class="specimen-image-container">
+                            <img src="../assets/images/specimens/quartz-2.jpg" alt="Smoky Quartz" class="specimen-image">
+                            <button type="button" class="quick-view-btn" data-specimen-id="8">Quick View</button>
+                        </div>
+                        <div class="specimen-details">
+                            <h3>Smoky Quartz</h3>
+                            <p class="specimen-location">Colorado, USA</p>
+                            <p class="specimen-description">Smoky quartz crystal with dark brown coloration and natural termination.</p>
+                            <div class="specimen-footer">
+                                <span class="specimen-price">$85.00</span>
+                                <a href="specimen-detail.html?id=8" class="btn btn-outline">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specimen Card 9 -->
+                    <div class="specimen-card">
+                        <div class="specimen-image-container">
+                            <img src="../assets/images/specimens/amethyst-2.jpg" alt="Amethyst Geode" class="specimen-image">
+                            <button type="button" class="quick-view-btn" data-specimen-id="9">Quick View</button>
+                        </div>
+                        <div class="specimen-details">
+                            <h3>Amethyst Geode</h3>
+                            <p class="specimen-location">Brazil</p>
+                            <p class="specimen-description">Medium-sized amethyst geode with deep purple crystals lining the interior.</p>
+                            <div class="specimen-footer">
+                                <span class="specimen-price">$150.00</span>
+                                <a href="specimen-detail.html?id=9" class="btn btn-outline">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specimen Card 10 -->
+                    <div class="specimen-card">
+                        <div class="specimen-image-container">
+                            <img src="../assets/images/specimens/malachite-2.jpg" alt="Malachite Slab" class="specimen-image">
+                            <button type="button" class="quick-view-btn" data-specimen-id="10">Quick View</button>
+                        </div>
+                        <div class="specimen-details">
+                            <h3>Malachite Slab</h3>
+                            <p class="specimen-location">Congo</p>
+                            <p class="specimen-description">Polished malachite slab with intricate banded patterns and rich green color.</p>
+                            <div class="specimen-footer">
+                                <span class="specimen-price">$200.00</span>
+                                <a href="specimen-detail.html?id=10" class="btn btn-outline">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specimen Card 11 -->
+                    <div class="specimen-card">
+                        <div class="specimen-image-container">
+                            <img src="../assets/images/specimens/fluorite-2.jpg" alt="Fluorite Cluster" class="specimen-image">
+                            <button type="button" class="quick-view-btn" data-specimen-id="11">Quick View</button>
+                        </div>
+                        <div class="specimen-details">
+                            <h3>Fluorite Cluster</h3>
+                            <p class="specimen-location">Illinois, USA</p>
+                            <p class="specimen-description">Cluster of purple fluorite crystals with cubic habit and excellent color.</p>
+                            <div class="specimen-footer">
+                                <span class="specimen-price">$110.00</span>
+                                <a href="specimen-detail.html?id=11" class="btn btn-outline">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specimen Card 12 -->
+                    <div class="specimen-card">
+                        <div class="specimen-image-container">
+                            <img src="../assets/images/specimens/pyrite-2.jpg" alt="Pyrite Cluster" class="specimen-image">
+                            <button type="button" class="quick-view-btn" data-specimen-id="12">Quick View</button>
+                        </div>
+                        <div class="specimen-details">
+                            <h3>Pyrite Cluster</h3>
+                            <p class="specimen-location">Spain</p>
+                            <p class="specimen-description">Cluster of cubic pyrite crystals with metallic luster and golden color.</p>
+                            <div class="specimen-footer">
+                                <span class="specimen-price">$75.00</span>
+                                <a href="specimen-detail.html?id=12" class="btn btn-outline">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination Component -->
+                <div class="pagination">
+                    <button type="button" class="pagination-btn pagination-prev" disabled>Previous</button>
+                    <div class="pagination-pages">
+                        <button type="button" class="pagination-page active">1</button>
+                        <button type="button" class="pagination-page">2</button>
+                        <button type="button" class="pagination-page">3</button>
+                        <button type="button" class="pagination-page">4</button>
+                        <button type="button" class="pagination-page">5</button>
+                    </div>
+                    <button type="button" class="pagination-btn pagination-next">Next</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick View Modal -->
+        <div class="quick-view-modal" id="quick-view-modal">
+            <div class="modal-content">
+                <button type="button" class="modal-close">&times;</button>
+                <div class="modal-body">
+                    <div class="modal-image">
+                        <img src="../assets/images/placeholder.jpg" alt="Specimen Image" id="modal-specimen-image">
+                    </div>
+                    <div class="modal-details">
+                        <h2 id="modal-specimen-title">Specimen Title</h2>
+                        <p class="modal-location" id="modal-specimen-location"></p>
+                        <p class="modal-description" id="modal-specimen-description"></p>
+                        <div class="modal-price" id="modal-specimen-price"></div>
+                        <div class="modal-actions">
+                            <a href="#" class="btn btn-primary" id="modal-view-details">View Full Details</a>
+                            <a href="appointment.html" class="btn btn-secondary">Schedule Viewing</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Mark's Minerals. All rights reserved.</p>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/specimens.js"></script>
+</body>
+</html> 

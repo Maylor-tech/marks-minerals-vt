@@ -1,0 +1,127 @@
+<div class="related-specimens-component">
+    <h2>Related Specimens</h2>
+    <div class="specimens-grid" id="relatedSpecimensGrid">
+        <!-- Specimens will be dynamically populated -->
+    </div>
+</div>
+
+<style>
+.related-specimens-component {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.related-specimens-component h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #444;
+}
+
+.specimens-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.specimen-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+}
+
+.specimen-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.specimen-image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.specimen-info {
+    padding: 1rem;
+}
+
+.specimen-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.specimen-category {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+@media (max-width: 600px) {
+    .specimens-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+}
+</style>
+
+<script>
+class RelatedSpecimens {
+    constructor() {
+        this.loadRelatedSpecimens();
+    }
+
+    async loadRelatedSpecimens() {
+        // This would typically fetch from an API
+        // For now, we'll simulate loading data
+        const relatedSpecimens = [
+            {
+                id: "SP-2024-002",
+                name: "Rose Quartz",
+                category: "Quartz",
+                imageUrl: "placeholder.jpg"
+            },
+            {
+                id: "SP-2024-003",
+                name: "Citrine Crystal",
+                category: "Quartz",
+                imageUrl: "placeholder.jpg"
+            },
+            {
+                id: "SP-2024-004",
+                name: "Clear Quartz",
+                category: "Quartz",
+                imageUrl: "placeholder.jpg"
+            },
+            {
+                id: "SP-2024-005",
+                name: "Smoky Quartz",
+                category: "Quartz",
+                imageUrl: "placeholder.jpg"
+            }
+        ];
+
+        this.renderSpecimens(relatedSpecimens);
+    }
+
+    renderSpecimens(specimens) {
+        const grid = document.getElementById('relatedSpecimensGrid');
+        grid.innerHTML = specimens.map(specimen => `
+            <a href="/specimen/${specimen.id}" class="specimen-card">
+                <img src="${specimen.imageUrl}" alt="${specimen.name}" class="specimen-image">
+                <div class="specimen-info">
+                    <h3 class="specimen-name">${specimen.name}</h3>
+                    <p class="specimen-category">${specimen.category}</p>
+                </div>
+            </a>
+        `).join('');
+    }
+}
+
+// Initialize related specimens when component is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new RelatedSpecimens();
+});
+</script> 

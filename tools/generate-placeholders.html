@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placeholder Image Generator</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Placeholder Image Generator</h1>
+    <div id="container"></div>
+    <script>
+        const images = [
+            { name: 'specimen-1', text: 'Quartz Crystal' },
+            { name: 'specimen-2', text: 'Malachite' },
+            { name: 'specimen-3', text: 'Fluorite' },
+            { name: 'specimen-4', text: 'Pyrite' },
+            { name: 'amethyst', text: 'Amethyst' },
+            { name: 'sapphire', text: 'Sapphire' },
+            { name: 'quartz', text: 'Quartz' },
+            { name: 'about-image', text: 'About Image' }
+        ];
+
+        function generatePlaceholder(name, text) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 400;
+            canvas.height = 400;
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = '#f0f0f0';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Border
+            ctx.strokeStyle = '#ccc';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(0, 0, canvas.width, canvas.height);
+            
+            // Text
+            ctx.fillStyle = '#666';
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(text, canvas.width/2, canvas.height/2);
+            ctx.font = '18px Arial';
+            ctx.fillText(name + '.jpg', canvas.width/2, canvas.height/2 + 30);
+            
+            // Download link
+            const link = document.createElement('a');
+            link.download = name + '.jpg';
+            link.href = canvas.toDataURL('image/jpeg', 0.8);
+            link.textContent = 'Download ' + name + '.jpg';
+            document.getElementById('container').appendChild(canvas);
+            document.getElementById('container').appendChild(link);
+            document.getElementById('container').appendChild(document.createElement('br'));
+        }
+
+        images.forEach(img => generatePlaceholder(img.name, img.text));
+    </script>
+</body>
+</html> 

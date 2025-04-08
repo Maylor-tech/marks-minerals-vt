@@ -1,0 +1,179 @@
+/* Critical CSS - Above the fold styles */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --border-color: #dee2e6;
+    --spacing-unit: 1rem;
+}
+
+/* Base styles */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Article container */
+.article-container {
+    width: 100%;
+    padding: var(--spacing-unit);
+}
+
+/* Header styles */
+.article-header {
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+}
+
+.article-title {
+    font-size: 1.75rem;
+    line-height: 1.2;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-unit);
+}
+
+.article-meta {
+    color: var(--secondary-color);
+    font-size: 0.875rem;
+    margin-bottom: var(--spacing-unit);
+}
+
+/* Navigation */
+.touch-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    padding: var(--spacing-unit);
+    display: flex;
+    justify-content: space-around;
+    z-index: 1000;
+}
+
+.touch-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    min-width: 4rem;
+}
+
+.touch-nav-item i {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.touch-nav-item.active {
+    color: var(--primary-color);
+}
+
+/* Loading skeleton */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Progressive image loading */
+.progressive-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.progressive-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.progressive-image img.loaded {
+    opacity: 1;
+}
+
+.progressive-image .placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    filter: blur(10px);
+    transform: scale(1.1);
+}
+
+/* Print button */
+.print-controls {
+    position: fixed;
+    bottom: 4rem;
+    right: var(--spacing-unit);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 999;
+}
+
+.print-button,
+.save-button {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 50%;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+/* Responsive breakpoints */
+@media (min-width: 768px) {
+    .article-container {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: calc(var(--spacing-unit) * 2);
+    }
+
+    .article-title {
+        font-size: 2rem;
+    }
+
+    .print-controls {
+        flex-direction: row;
+        bottom: var(--spacing-unit);
+    }
+}
+
+@media (min-width: 1024px) {
+    .article-container {
+        max-width: 960px;
+    }
+
+    .article-title {
+        font-size: 2.5rem;
+    }
+} 
