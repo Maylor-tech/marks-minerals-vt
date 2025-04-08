@@ -1,15 +1,77 @@
-# Mark's Minerals Website
+# Mark's Minerals
 
-A modern, responsive website for Mark's Minerals, featuring a comprehensive collection of mineral specimens, educational resources, and appointment booking capabilities.
+A professional website for Mark's Minerals, showcasing premium mineral specimens and offering educational resources about mineralogy.
 
-## Features
+## 🌟 Features
 
-- Responsive design that works on all devices
-- Interactive product catalog with detailed specimen information
-- Educational resources section with guides and articles
-- Appointment booking system
-- Contact form with location information
-- Modern UI with smooth animations and transitions
+- **Product Showcase**: Browse our collection of premium mineral specimens
+- **Virtual Tour**: Experience specimens in 3D with detailed information
+- **Educational Resources**: Access guides and articles about mineralogy
+- **Appointment Booking**: Schedule private viewings
+- **Responsive Design**: Optimized for all devices
+
+## 🚀 Live Website
+
+Visit our website: [Mark's Minerals](https://maylor-tech.github.io/marks-minerals-vt/)
+
+## 💻 Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+- Font Awesome Icons
+- Google Model Viewer for 3D specimens
+
+## 📱 Pages
+
+- Home
+- Products
+- About
+- Resources
+- Contact
+- Virtual Tour
+- Appointment Booking
+
+## 🛠️ Development
+
+To run this project locally:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Maylor-tech/marks-minerals-vt.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd marks-minerals-vt
+   ```
+
+3. Start a local server:
+   ```bash
+   python -m http.server 8000
+   # or
+   npx http-server
+   ```
+
+4. Open your browser and visit:
+   ```
+   http://localhost:8000
+   ```
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Maylor-tech/marks-minerals-vt/issues).
+
+## 📞 Contact
+
+For inquiries about minerals or appointments:
+- Phone: (802) 376-4282
+- Email: [contact@marksminerals.com](mailto:contact@marksminerals.com)
+- Website: [https://maylor-tech.github.io/marks-minerals-vt/](https://maylor-tech.github.io/marks-minerals-vt/)
 
 ## Project Structure
 
@@ -22,63 +84,6 @@ marks-minerals-vt/
 ├── pages/            # HTML pages
 └── index.html        # Homepage
 ```
-
-## Setup
-
-1. Clone the repository:
-   ```bash
-   git clone [repository-url]
-   ```
-
-2. Navigate to the project directory:
-   ```bash
-   cd marks-minerals-vt
-   ```
-
-3. Start a local server:
-   ```bash
-   python -m http.server 8000
-   ```
-   or
-   ```bash
-   npx http-server -p 8000
-   ```
-
-4. Open your browser and visit:
-   ```
-   http://localhost:8000
-   ```
-
-## Technologies Used
-
-- HTML5
-- CSS3
-- JavaScript (ES6+)
-- Font Awesome Icons
-- Google Fonts
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Contact
-
-Mark's Minerals - [Contact Information]
 
 ## Gallery Features
 
