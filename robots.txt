@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Allow: /pages/
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+
+Sitemap: https://markminerals.com/sitemap.xml
+
+# Prevent caching of appointment form
+Disallow: /pages/appointment.html?* 

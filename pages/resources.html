@@ -14,12 +14,16 @@
     <header class="main-header">
         <nav class="main-nav">
             <div class="nav-brand">
-                <a href="../index.html">Mark's Minerals</a>
+                <img src="../assets/images/logo.svg" alt="Mark's Minerals Logo - A stylized crystal formation" class="nav-brand-logo">
+                <div class="nav-brand-text">
+                    <a href="../index.html" class="nav-brand-name" aria-label="Mark's Minerals Home">Mark's Minerals</a>
+                    <span class="nav-brand-tagline">By Appointment Only</span>
+                </div>
             </div>
-            <button type="button" class="nav-toggle" aria-label="Toggle navigation">
+            <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
                 <span class="hamburger"></span>
             </button>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="about.html">About</a></li>
@@ -43,13 +47,13 @@
                     </div>
                     <div class="search-filters">
                         <label class="filter-label">
-                            <input type="checkbox" name="filter" value="guides"> Guides
+                            <input type="checkbox" name="filter-type" value="guides"> Guides
                         </label>
                         <label class="filter-label">
-                            <input type="checkbox" name="filter" value="articles"> Articles
+                            <input type="checkbox" name="filter-format" value="articles"> Articles
                         </label>
                         <label class="filter-label">
-                            <input type="checkbox" name="filter" value="videos"> Videos
+                            <input type="checkbox" name="filter-content" value="videos"> Videos
                         </label>
                     </div>
                 </form>

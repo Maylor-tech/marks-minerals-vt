@@ -14,12 +14,16 @@
     <header class="main-header">
         <nav class="main-nav">
             <div class="nav-brand">
-                <a href="../index.html">Mark's Minerals</a>
+                <img src="../assets/images/logo.svg" alt="Mark's Minerals Logo" class="nav-brand-logo">
+                <div class="nav-brand-text">
+                    <a href="../index.html" class="nav-brand-name">Mark's Minerals</a>
+                    <span class="nav-brand-tagline">By Appointment Only</span>
+                </div>
             </div>
-            <button type="button" class="nav-toggle" aria-label="Toggle navigation">
+            <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
                 <span class="hamburger"></span>
             </button>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="products.html" aria-current="page">Products</a></li>
                 <li><a href="about.html">About</a></li>
